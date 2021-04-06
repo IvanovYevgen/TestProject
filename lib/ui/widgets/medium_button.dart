@@ -12,57 +12,49 @@ class MediumButton extends StatelessWidget {
 
   const MediumButton(
       {this.text,
-        this.url,
-        this.buttonColor,
-        this.textColor,
-        this.fontSize,
-        this.function,
-        this.internalPadding});
+      this.url,
+      this.buttonColor,
+      this.textColor,
+      this.fontSize,
+      this.function,
+      this.internalPadding});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+    return TextButton(
       child: Row(
+        mainAxisSize: MainAxisSize.max,
         children: [
-          Expanded(
+          Padding(
+            padding: const EdgeInsets.all(2.0),
             child: Container(
-              child: TextButton(
-                child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 2),
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Container(height: 35,width: 35,
-                          child: Image.asset(url,fit: BoxFit.fill,),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: internalPadding),
-                    Text(
-                      text,
-                    style:
-                    GoogleFonts.montserrat(
-      color: textColor,
-      decoration: TextDecoration.none,
-      fontSize: fontSize
-      ),
-                    )
-                  ],
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: buttonColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                onPressed: function,
+              height: 35,
+              width: 35,
+              child: Image.asset(
+                url,
+                fit: BoxFit.fill,
               ),
             ),
           ),
+          SizedBox(width: internalPadding),
+          Expanded(
+            child: Text(
+              text,
+              style: GoogleFonts.montserrat(
+                  color: textColor,
+                  decoration: TextDecoration.none,
+                  fontSize: fontSize),
+            ),
+          )
         ],
       ),
+      style: TextButton.styleFrom(
+        backgroundColor: buttonColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
+      onPressed: function,
     );
   }
 }

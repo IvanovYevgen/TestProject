@@ -5,9 +5,15 @@ class CustomTab extends StatelessWidget {
   final String firstTab;
   final String secondTab;
   final Function functionForTabs;
+  final Color colorOfFirstTabTextColor;
+  final Color colorOfSecondTabTextColor;
 
-  const CustomTab (
-      {this.firstTab, this.secondTab, this.functionForTabs});
+  const CustomTab(
+      {this.firstTab,
+      this.secondTab,
+      this.functionForTabs,
+      this.colorOfFirstTabTextColor,
+      this.colorOfSecondTabTextColor});
 
   @override
   Widget build(BuildContext context) {
@@ -22,31 +28,28 @@ class CustomTab extends StatelessWidget {
         ),
         indicator: ShapeDecoration(
             shape: UnderlineInputBorder(
-              borderSide: BorderSide(
-                  width: 5, color: Colors.white, style: BorderStyle.solid),
-            )),
+          borderSide: BorderSide(
+              width: 5, color: Colors.white, style: BorderStyle.solid),
+        )),
         onTap: functionForTabs,
         tabs: <Widget>[
           Tab(
             child: Text(
               firstTab,
               style: GoogleFonts.montserrat(
-          color: Color(0xFFFF99FF),
-          decoration: TextDecoration.none,
-          fontSize: 22
-      ),
-              // TextStyle(color: Colors.grey),
+                  color: colorOfFirstTabTextColor,
+                  decoration: TextDecoration.none,
+                  fontSize: 22),
             ),
           ),
           Tab(
             child: Text(
               secondTab,
               style: GoogleFonts.montserrat(
-    color: Colors.white,
-    decoration: TextDecoration.none,
-    fontSize: 22
-    ),
-              // TextStyle(color: Colors.white),
+                  color: colorOfSecondTabTextColor,
+                  // Colors.white,
+                  decoration: TextDecoration.none,
+                  fontSize: 22),
             ),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class Header extends StatelessWidget {
   final double height;
   final String title;
@@ -8,21 +9,24 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: height,
+    return Container(
+      height: height,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
+            begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFFFF820F),Color(0xFFFB31FF)]),
+            colors: [Color(0xFFFF820F), Color(0xFFFB31FF)]),
       ),
       child: Row(
         children: [
-          Expanded(child: Text(title, textAlign: TextAlign.center,
+          Expanded(
+              child: Text(
+            title,
+            textAlign: TextAlign.center,
             style: GoogleFonts.montserrat(
-            color: Colors.white,
-            decoration: TextDecoration.none,
-            fontSize: 43
-          ),
+                color: Colors.white,
+                decoration: TextDecoration.none,
+                fontSize: 43),
           )),
         ],
       ),
