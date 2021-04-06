@@ -3,7 +3,7 @@ import 'package:test_project/ui/widgets/custom_tab.dart';
 import 'package:test_project/ui/widgets/custom_text_field.dart';
 import 'package:test_project/ui/widgets/header.dart';
 import 'package:test_project/ui/widgets/medium_button.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:test_project/ui/widgets/text_builder.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -28,7 +28,7 @@ class _LogInScreenState extends State<LogInScreen> {
             ),
             Container(
               height: globalSizeHeight * 0.06,
-              color: Color(0xFFff00ff),
+              color: Color(0xFFFF00CC),
               child: CustomTab(
                   firstTab: 'Sign Up',
                   secondTab: 'Log In',
@@ -75,14 +75,9 @@ class _LogInScreenState extends State<LogInScreen> {
                           width: globalSizeWidth * 0.3,
                           color: Color(0xFFEBEBEB),
                         ),
-                        Text(
-                          'Or',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Color(0xFFEBEBEB),
-                              decoration: TextDecoration.none,
-                              fontSize: 28),
-                        ),
+                        TextBuilder(text: 'Or', 
+                        color: Color(0xFFEBEBEB),
+                        textSize: 28),
                         Container(
                           height: 5,
                           width: globalSizeWidth * 0.3,
@@ -93,18 +88,26 @@ class _LogInScreenState extends State<LogInScreen> {
                     SizedBox(
                       width: globalSizeWidth * 0.86,
                       child: CustomTextField(
-                          hint: 'Email',
-                          controller: _emailController,
-                          obscure: false,
-                          icon: Icon(Icons.alternate_email)),
+                        hint: 'Email',
+                        controller: _emailController,
+                        obscure: false,
+                        icon: Icon(
+                          Icons.alternate_email,
+                          color: Color(0xFFB5B5B5),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: globalSizeWidth * 0.86,
                       child: CustomTextField(
-                          hint: 'Password',
-                          controller: _passwordController,
-                          obscure: true,
-                          icon: Icon(Icons.lock)),
+                        hint: 'Password',
+                        controller: _passwordController,
+                        obscure: true,
+                        icon: Icon(
+                          Icons.lock,
+                          color: Color(0xFFB5B5B5),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: globalSizeWidth * 0.86,
@@ -127,40 +130,29 @@ class _LogInScreenState extends State<LogInScreen> {
                                         Color(0xFFE16C00),
                                       ],
                                     ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(80.0))),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(80.0))),
                                 padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                                child:  Text(
-                                  'Log in',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.montserrat(
-                                      color: Color(0xFFEBEBEB),
-                                      decoration: TextDecoration.none,
-                                      fontSize: 28),
-                                ),
+                                child:  TextBuilder(text: 'Log in', 
+                        color: Color(0xFFEBEBEB),
+                        textSize: 28),
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-
-                   Row(mainAxisAlignment: MainAxisAlignment.center,
-                     children: [
-                       Text('Forgot your password? ',
-                         style: GoogleFonts.montserrat(
-                             color: Colors.black,
-                             decoration: TextDecoration.none,
-                             fontSize: 18),
-                       ),
-                       Text('Click here',
-                         style: GoogleFonts.montserrat(
-                             color:  Color(0xFFE16C00),
-                             decoration: TextDecoration.none,
-                             fontSize: 18),
-                       ),
-                     ],
-                   )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+TextBuilder(text: 'Forgot your password? ', 
+                        color: Colors.black,
+                        textSize: 18),
+TextBuilder(text: 'Click here', 
+                        color: Color(0xFFE16C00),
+                        textSize: 18),
+                      ],
+                    )
                   ],
                 ),
               ),

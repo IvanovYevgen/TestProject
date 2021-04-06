@@ -31,7 +31,7 @@ class CustomTab extends StatelessWidget {
             child: Text(
               firstTab,
               style: GoogleFonts.montserrat(
-          color: Color(0xFFA259FF),
+          color: Color(0xFFFF99FF),
           decoration: TextDecoration.none,
           fontSize: 22
       ),

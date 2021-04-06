@@ -47,11 +47,9 @@ flutter:
 
 
   assets:
-    - assets/images/icon_dog.png
     - assets/images/icon_fb.png
     - assets/images/icon_gmail.png
     - assets/images/icon_insta.png
-    - assets/images/lock_icon.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

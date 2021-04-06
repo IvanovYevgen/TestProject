@@ -48,8 +48,6 @@ class MediumButton extends StatelessWidget {
       decoration: TextDecoration.none,
       fontSize: fontSize
       ),
-
-                      // TextStyle(color: textColor, fontSize: fontSize),
                     )
                   ],
                 ),

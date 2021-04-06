@@ -18,12 +18,12 @@ class CustomTextField extends StatelessWidget {
           height: 48,
           child: TextField(
             obscureText: obscure,
-            decoration: new InputDecoration(
-                border: new OutlineInputBorder(
+            decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
                   borderSide:
-                      const BorderSide(width: 1, color: Color(0xFFEBEBEB)),
-                  borderRadius: const BorderRadius.all(
-                    const Radius.circular(30),
+                      BorderSide(width: 1, color: Colors.white),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
                   ),
                 ),
                 prefixIcon: icon,
